@@ -52,7 +52,7 @@ User.find({})
 
 ## Installation
 ```sh
-$ npm install mongoose-to-csv
+$ npm install mongoose-to-csv-quotes
 ```
 
 ## Testing
