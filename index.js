@@ -49,7 +49,7 @@ module.exports = function mongooseToCsv(schema, options) {
 
   schema.static('findAndStreamCsv', function(query) {
     query = query || {};
-    return this.find(query).stream().pipe(builder.createTransformStream());
+    return this.find(query).cursor().pipe(builder.createTransformStream());
   });
 
   /**
