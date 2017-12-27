@@ -1,5 +1,5 @@
-# mongoose-to-csv
-MongooseToCsv is a mongoose plugin that creates a [`CsvBuilder`](https://github.com/nickpisacane/CsvBuilder) instance for your Schema.
+# mongoose-to-csv-quotes
+MongooseToCsvQuotes is a mongoose plugin that creates a [`CsvBuilder`](https://github.com/nickpisacane/CsvBuilder) instance for your Schema. Updated [`mongoose-to-csv`](https://www.npmjs.com/package/mongoose-to-csv) package that escapes commas.
 
 ## Usage
 ```js

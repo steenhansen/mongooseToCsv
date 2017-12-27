@@ -1,8 +1,8 @@
 {
-  "name": "mongoose-to-csv",
-  "version": "0.1.1",
+  "name": "mongoose-to-csv-quotes",
+  "version": "1.0.0",
   "author": "Nick Pisacane <pisacanen@gmail.com> (http://nickpisacane.com)",
-  "description": "Export mongoose querys as csv streams.",
+  "description": "Export mongoose querys as csv streams whilst escaping commas.",
   "keywords": [
     "csv",
     "mongoose",
@@ -11,10 +11,10 @@
     "mongoose to csv"
   ],
   "licence": "MIT",
-  "homepage": "https://github.com/Nindaff/mongooseToCsv",
+  "homepage": "https://github.com/steenhansen/mongooseToCsv",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nindaff/mongooseToCsv"
+    "url": "https://github.com/steenhansen/mongooseToCsv"
   },
   "main": "index.js",
   "scripts": {
