@@ -12,7 +12,7 @@ var UserSchema = new mongoose.Schema({
 
 UserSchema.plugin(mongooseToCsv, {
   headers: 'Firstname Lastname Username Email Age',
-  constraints: {
+  alias: {
     'Username': 'username',
     'Email': 'email',
     'Age': 'age'
