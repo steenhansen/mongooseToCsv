@@ -3,6 +3,8 @@ MongooseToCsvQuotes is a mongoose plugin that creates a [`CsvBuilder`](https://g
 
 ## Usage
 ```js
+const mongooseToCsvQuotes = require('mongoose-to-csv-quotes') 
+
 var UserSchema = new mongoose.Schema({
   fullname: {type: String},
   email: {type: String},
@@ -10,7 +12,7 @@ var UserSchema = new mongoose.Schema({
   username: {type: String}
 });
 
-UserSchema.plugin(mongooseToCsv, {
+UserSchema.plugin(mongooseToCsvQuotes, {
   headers: 'Firstname Lastname Username Email Age',
   alias: {
     'Username': 'username',
@@ -63,7 +65,7 @@ $ npm test
 
 ## API
 
-#### Schema.plugin(mongooseToCsv, options)
+#### Schema.plugin(mongooseToCsvQuotes, options)
 The `options` argument is passed to the `CsvBuilder` instance, please refer to
 the <a href="https://github.com/Nindaff/CsvBuilder">Docs</a> for more in-depth details. The only aditional property that can be included is the `virutals` property.
 The `virtuals` have nothing to do with mongoose virtuals.
