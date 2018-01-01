@@ -1,5 +1,5 @@
 # mongoose-to-csv-quotes
-MongooseToCsvQuotes is a mongoose plugin that creates a [`CsvBuilder`](https://github.com/nickpisacane/CsvBuilder) instance for your Schema. Updated [`mongoose-to-csv`](https://www.npmjs.com/package/mongoose-to-csv) package that escapes commas.
+MongooseToCsvQuotes is a mongoose plugin that creates a [`CsvBuilder`](https://github.com/nickpisacane/CsvBuilder) instance for your Schema. Updated [`mongoose-to-csv`](https://www.npmjs.com/package/mongoose-to-csv) package that escapes commas by default. Only if options.show_headers is true, are headers put in first row.
 
 ## Usage
 ```js
