@@ -1,6 +1,6 @@
 {
   "name": "mongoose-to-csv-quotes",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Nick Pisacane <pisacanen@gmail.com> (http://nickpisacane.com)",
   "description": "Export mongoose querys as csv streams whilst escaping commas.",
   "keywords": [
@@ -21,7 +21,7 @@
     "test": "mocha ./test/mongooseToCsv.spec.js"
   },
   "dependencies": {
-    "csv-builder": "^1.0.0"
+    "csv-builder": "1.0.0"
   },
   "devDependencies": {
     "mocha": "^3.2.0",

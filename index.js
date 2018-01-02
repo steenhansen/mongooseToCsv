@@ -2,29 +2,30 @@
  * Module Dependencies
  */
 
- var CsvBuilder = require('csv-builder');
+var CsvBuilder = require('csv-builder');
 
-
-// If options.quoted == true OR undefined then only use quotes where needed 
- function deleteUselessQuotes_(arr){
-   const quoted_arr = this.oldNormalizeArray_(arr)
-   const filtered_arr = quoted_arr.map(
-    column_data => { 
-      const column_text =  column_data.substring(1, column_data.length-1)
-      if (column_text.includes(',') || column_text.includes('\n') || column_text.includes('"')){
-        return column_data
-      }else{
-        return column_text
+function new_normalizeArray_(data_row) {
+  var csved_row = data_row.map(column_data => {
+    text_data = column_data.toString();
+    if (this.format.delimiter==='\t'){
+      text_data = text_data.replace(/\t/g, '');
+    } else if (this.format.delimiter===','){
+      if (text_data.includes(',') || text_data.includes('\n') || text_data.includes('"')){
+        if (text_data.includes('"')){
+          text_data = text_data.replace(/"/g, '""');
+        }
+        text_data = `"${text_data}"`;
       }
     }
-    )
-   return filtered_arr
- }
+    return text_data;
+  });
+  return csved_row
+}
 
 // If options.show_headers == false OR undefined then do not return header names in output
- function forgetHeader_(){
-    return ''
- }
+function forgetHeader_(){
+  return '';
+}
 
 /**
  * Create csv streams from a mongoose schema
@@ -41,16 +42,10 @@
   // need options.headers
   if (!options.headers) throw new Error('MongooseToCsv requires the `headers` option');
   var builder = new CsvBuilder(options);
+  builder._normalizeArray = new_normalizeArray_;
 
-  // Only if options.quoted == false ignore extra quotes
-  if (typeof options.quoted ==='undefined' || options.quoted) {
-    builder.oldNormalizeArray_ = builder._normalizeArray
-    builder._normalizeArray = deleteUselessQuotes_
-  }
-
-  // Only if options.show_headers == true produce header cells
   if (typeof options.show_headers ==='undefined' || !options.show_headers) {
-    builder.getHeaders = forgetHeader_  
+    builder.getHeaders = forgetHeader_;  
   }
 
   if (options.virtuals) {
